@@ -2,8 +2,10 @@
 Application for storing movie reviews
 
 # Aplicație de recenzii și ratinguri pentru filme și seriale
-![logo](https://github.com/russuiulia/movierev/assets/51412651/8a0df27e-7ff2-4a0d-87f2-1b0f51402032)
-![418560777_403807582167257_5694941846314078183_n](https://github.com/russuiulia/movierev/assets/51412651/8b314a90-36b2-4882-b4cc-2c007b8d92c8)
+<p align="center">
+<img src="https://github.com/russuiulia/movierev/assets/51412651/8a0df27e-7ff2-4a0d-87f2-1b0f51402032" width="408" >
+<img src="https://github.com/russuiulia/movierev/assets/51412651/8b314a90-36b2-4882-b4cc-2c007b8d92c8" width="808"  >
+</p>
 
 Această aplicație .NET CRUD este destinată gestionării recenziilor și ratingurilor pentru filme și seriale. Utilizatorii pot adăuga, vizualiza, edita și șterge recenzii și ratinguri pentru diverse filme și seriale.
 
@@ -44,7 +46,7 @@ Contribuțiile sunt binevenite! Dacă dorești să contribui la îmbunătățire
 
 ## Autor
 
-Această aplicație a fost dezvoltată de [Mandiș Nichita](link către profilul tău GitHub) și [Russu Iulia](link către profilul tău GitHub), grupa TI-224, UTM FCIM, în cadrul proiectului de an la obiectul MRSUTWEB coordonat de Rusu Cristian cristian.rusu@ati.utm.md.
+Această aplicație a fost dezvoltată de [Mandiș Nichita](https://github.com/Akerius173) și [Russu Iulia](https://github.com/russuiulia), grupa TI-224, UTM FCIM, în cadrul proiectului de an la obiectul MRSUTWEB coordonat de Rusu Cristian cristian.rusu@ati.utm.md.
 
 ## Licență
 
