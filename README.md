@@ -46,7 +46,7 @@ Contribuțiile sunt binevenite! Dacă dorești să contribui la îmbunătățire
 
 ## Autor
 
-Această aplicație a fost dezvoltată de [Mandiș Nichita](https://github.com/Akerius173) și [Russu Iulia](https://github.com/russuiulia), grupa TI-224, UTM FCIM, în cadrul proiectului de an la obiectul MRSUTWEB coordonat de Rusu Cristian cristian.rusu@ati.utm.md.
+Această aplicație a fost dezvoltată de [Mandiș Nichita](https://github.com/Akerius682) și [Russu Iulia](https://github.com/russuiulia), grupa TI-224, UTM FCIM, în cadrul proiectului de an la obiectul MRSUTWEB coordonat de Rusu Cristian cristian.rusu@ati.utm.md.
 
 ## Licență
 
