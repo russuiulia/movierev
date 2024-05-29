@@ -5,6 +5,10 @@ namespace movierev.Models
 {
     public class Movie
     {
+        public string UserId { get; set; }
+
+        
+
         public int Id { get; set; }
 
         [Required]
@@ -12,6 +16,9 @@ namespace movierev.Models
 
         [Required]
         public string Description { get; set; }
+
+     
+        public string Image { get; set; }
 
         [Required]
         [Range(1, 10)]

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using movierev.Models;
 
 namespace movierev.Controllers
@@ -15,12 +16,23 @@ namespace movierev.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Movies
+
+       // [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Index()
         {
-            return View(db.Movies.ToList());
+            // Get the current user's ID
+            var userId = User.Identity.GetUserId();
+
+            // Filter movies by the current user's ID
+            var userMovies = db.Movies.Where(m => m.UserId == userId).ToList();
+
+            return View(userMovies);
+
         }
 
         // GET: Movies/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +48,7 @@ namespace movierev.Controllers
         }
 
         // GET: Movies/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -46,10 +59,12 @@ namespace movierev.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Rating,ReleaseYear,Duration")] Movie movie)
+        [Authorize]
+        public ActionResult Create([Bind(Include = "Id,Title,Description,Image,Rating,ReleaseYear,Duration")] Movie movie)
         {
             if (ModelState.IsValid)
             {
+                movie.UserId = User.Identity.GetUserId();
                 db.Movies.Add(movie);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,6 +74,7 @@ namespace movierev.Controllers
         }
 
         // GET: Movies/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,18 +94,33 @@ namespace movierev.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,Rating,ReleaseYear,Duration")] Movie movie)
+        [Authorize]
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,Image,Rating,ReleaseYear,Duration")] Movie movie)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(movie).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                // Attach the existing movie entity to the context and mark it as modified
+                var existingMovie = db.Movies.Find(movie.Id);
+                if (existingMovie != null)
+                {
+                    existingMovie.Title = movie.Title;
+                    existingMovie.Description = movie.Description;
+                    existingMovie.Image = movie.Image;
+                    existingMovie.Rating = movie.Rating;
+                    existingMovie.ReleaseYear = movie.ReleaseYear;
+                    existingMovie.Duration = movie.Duration;
+
+                    db.Entry(existingMovie).State = EntityState.Modified;
+                    db.SaveChanges(); // Save the changes
+                    return RedirectToAction("Index"); // Redirect to Index
+                }
+                return HttpNotFound(); // Return not found if movie does not exist
             }
             return View(movie);
         }
 
         // GET: Movies/Delete/5
+       // [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +138,7 @@ namespace movierev.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Movie movie = db.Movies.Find(id);

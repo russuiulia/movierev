@@ -182,6 +182,26 @@
     <Compile Include="Migrations\202403121518054_InitialCreate1.Designer.cs">
       <DependentUpon>202403121518054_InitialCreate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404251632077_MigrationName.cs" />
+    <Compile Include="Migrations\202404251632077_MigrationName.Designer.cs">
+      <DependentUpon>202404251632077_MigrationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404251639296_MigrationNames.cs" />
+    <Compile Include="Migrations\202404251639296_MigrationNames.Designer.cs">
+      <DependentUpon>202404251639296_MigrationNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404251641208_MigrationNamess.cs" />
+    <Compile Include="Migrations\202404251641208_MigrationNamess.Designer.cs">
+      <DependentUpon>202404251641208_MigrationNamess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405292220092_AddDescriptionToProduct.cs" />
+    <Compile Include="Migrations\202405292220092_AddDescriptionToProduct.Designer.cs">
+      <DependentUpon>202405292220092_AddDescriptionToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405292229569_AddImageToProduct.cs" />
+    <Compile Include="Migrations\202405292229569_AddImageToProduct.Designer.cs">
+      <DependentUpon>202405292229569_AddImageToProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MovieModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -401,6 +421,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403121518054_InitialCreate1.resx">
       <DependentUpon>202403121518054_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404251632077_MigrationName.resx">
+      <DependentUpon>202404251632077_MigrationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404251639296_MigrationNames.resx">
+      <DependentUpon>202404251639296_MigrationNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404251641208_MigrationNamess.resx">
+      <DependentUpon>202404251641208_MigrationNamess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405292220092_AddDescriptionToProduct.resx">
+      <DependentUpon>202405292220092_AddDescriptionToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405292229569_AddImageToProduct.resx">
+      <DependentUpon>202405292229569_AddImageToProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
