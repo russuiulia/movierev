@@ -1,9 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@model IEnumerable<movierev.Models.Movie>
 <section id="hero" class="d-flex align-items-center justify-content-center" style='background-image: url("/Content/assets/img/hero-bg.jpg");'>
-    <div class="container" data-aos="fade-up" >
+    <div class="container" data-aos="fade-up">
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
             <div class="col-xl-6 col-lg-8">
@@ -52,29 +52,22 @@
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
 
-            <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <img src="/Content/assets/img/about.jpg" class="img-fluid" alt="">
+        <div class="row" style="margin-left:60px;margin-right:60px">
+
+            @foreach (var item in Model)
+            {
+                <div class="card" style="width: 19%;margin:4px">
+                    <img class="card-img-top" style="height: 140px;" src=@Html.DisplayFor(modelItem => item.Image) alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">@Html.DisplayFor(modelItem => item.Title) (@Html.DisplayFor(modelItem => item.ReleaseYear))</h3>
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Duration) min</h5>
+                        <h3 class="card-title">@Html.DisplayFor(modelItem => item.Rating) / 5</h3>
+                     
+                    </div>
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-                    </p>
-                </div>
-            </div>
+
+            }
 
         </div>
     </section><!-- End About Section -->
@@ -193,7 +186,7 @@
         </div>
     </section><!-- End Services Section -->
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta"  style='background-image: url("/Content/assets/img/hero-bg.jpg");'>
+    <section id="cta" class="cta" style='background-image: url("/Content/assets/img/hero-bg.jpg");'>
         <div class="container" data-aos="zoom-in">
 
             <div class="text-center">
@@ -408,7 +401,7 @@
         </div>
     </section><!-- End Counts Section -->
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials"  style='background-image: url("/Content/assets/img/hero-bg.jpg");'>
+    <section id="testimonials" class="testimonials" style='background-image: url("/Content/assets/img/hero-bg.jpg");'>
         <div class="container" data-aos="zoom-in">
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -485,7 +478,7 @@
         </div>
     </section><!-- End Testimonials Section -->
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team" >
+    <section id="team" class="team">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
